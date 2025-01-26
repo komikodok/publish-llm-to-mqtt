@@ -1,0 +1,15 @@
+# Environment
+.env
+.env.*
+.vscode/
+.idea/
+.DS_Store
+
+# Virtual environment
+.venv/
+env/
+venv/
+bin/=]
+include/
+Lib/
+Scripts/
