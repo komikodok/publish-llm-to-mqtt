@@ -24,4 +24,3 @@ response = requests.post(
 )
 
 result = response.json()["choices"][0]["message"]["content"] # output dari llm
-print(result)
