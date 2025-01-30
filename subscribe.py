@@ -1,4 +1,5 @@
 from paho.mqtt import client
+from groq_api_response import get_response
 
 
 broker = "mqtt.eclipseprojects.io"
@@ -22,9 +23,11 @@ client.on_message = on_message
 client.connect(broker, port)
 
 client.loop_start()
-print(message if message else "Else")
+
 while True:
     if message:
-        print(message if message else "Else")
+        result = get_response(message)
+        print(f"Bot Response: {result}")
     message = ""
+
 client.loop_stop()
