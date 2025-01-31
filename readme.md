@@ -6,6 +6,8 @@ This project demonstrates how to integrate a Large Language Model (LLM) with the
 
 ## Prerequisites
 
+- Windows
+
 - Python 3.8 or higher (tested with Python 3.11)
 
 - An MQTT broker (e.g., Mosquitto, HiveMQ -> tested with broker "mqtt.eclipseprojects.io")
@@ -24,6 +26,16 @@ Go to the project directory
 
 ```bash
   cd <project-directory>
+```
+
+Create virtual environment
+
+```bash
+  python -m venv .venv
+```
+
+```bash
+  .venv\scripts\activate.bat
 ```
 
 Install dependencies
