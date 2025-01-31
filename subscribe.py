@@ -8,7 +8,7 @@ import os
 load_dotenv(find_dotenv(".env.example"))
 
 broker = os.getenv("BROKER")
-port = os.getenv("PORT")
+port = int(os.getenv("PORT"))
 topic = os.getenv("TOPIC_MQTT_TO_LLM")
 
 message = ""
