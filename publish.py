@@ -1,10 +1,14 @@
 from paho.mqtt import publish
 
+from dotenv import load_dotenv, find_dotenv
+import os
 
-broker = "mqtt.eclipseprojects.io"
-port = 1883
-topic = "generation-ai/1"
 
+load_dotenv(find_dotenv(".env.example"))
+
+broker = os.getenv("BROKER")
+port = os.getenv("PORT")
+topic = os.getenv("TOPIC_MQTT_TO_LLM")
 
 while True:
     message = input("Message from publisher: ")

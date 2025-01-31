@@ -1,15 +1,21 @@
 from paho.mqtt import client
 from groq_api_response import get_response
 
+from dotenv import load_dotenv, find_dotenv
+import os
 
-broker = "mqtt.eclipseprojects.io"
-port = 1883
+
+load_dotenv(find_dotenv(".env.example"))
+
+broker = os.getenv("BROKER")
+port = os.getenv("PORT")
+topic = os.getenv("TOPIC_MQTT_TO_LLM")
 
 message = ""
 
 def on_connect(client, userdata, flags, reason_code):
     print(f"Connected with result code {reason_code}")
-    client.subscribe("generation-ai/1")
+    client.subscribe(topic)
 
 def on_message(client, userdata, msg):
     global message
